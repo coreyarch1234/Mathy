@@ -40,6 +40,15 @@ export default class App extends Component<{}> {
                         'Accept': 'application/json',
                         'Content-Type': 'application/json'
                       },
+                      formats: {
+                          'mathml': true
+                      },
+                      region: {
+                          'top_left_x': 0,
+                          'top_left_y': 50,
+                          'width': 100,
+                          'height': 250
+                      }
                       body: JSON.stringify({
                         'url':'data:text/plain;base64,' + image
                       })
