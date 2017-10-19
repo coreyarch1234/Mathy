@@ -23,12 +23,12 @@ export default class App extends Component<{}> {
          .then((data) => {
              console.log("DATA START");
              console.log(data);
-             console.log("DATA END")
+             console.log("DATA END");
              var path = data.path;
              console.log("PATH START");
-             console.log(path)
-             console.log("PATH END")
-             console.log("TESTING NEW!!!!")
+             console.log(path);
+             console.log("PATH END");
+             console.log("TESTING NEW!!!!");
              NativeModules.ReadImageData.readImage(path, (image) => {
                  console.log("THE IMAGE DATA IS: ");
                  console.log(image);
@@ -121,8 +121,8 @@ const styles = StyleSheet.create({
     color: '#000',
     padding: 10,
     margin: 40
-},
-rectangle: {
+  },
+  rectangle: {
     position: "absolute",
     width: viewWidth,
     height: viewHeight,
@@ -130,5 +130,5 @@ rectangle: {
     top: (height - viewHeight) / 2,
     borderWidth: 2,
     borderColor: "#f00",
-}
+  }
 });
