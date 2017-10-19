@@ -43,12 +43,12 @@ export default class App extends Component<{}> {
                       formats: {
                           'mathml': true
                       },
-                      region: {
-                          'top_left_x': 0,
-                          'top_left_y': 50,
-                          'width': 100,
-                          'height': 250
-                      }
+                    //   region: {
+                    //       'top_left_x': 0,
+                    //       'top_left_y': ,
+                    //       'width': 100,
+                    //       'height': 100
+                    //   }
                       body: JSON.stringify({
                         'url':'data:text/plain;base64,' + image
                       })
@@ -80,10 +80,15 @@ export default class App extends Component<{}> {
            aspect={Camera.constants.Aspect.fill}>
            <Text style={styles.capture} onPress={this.takePicture.bind(this)}>[CAPTURE]</Text>
        </Camera>
+       <View style={styles.rectangle} />
       </View>
     );
   }
 }
+
+const { width, height } = Dimensions.get('window'); // {width:1000, height: 800, ...}
+const viewWidth = Math.round(width * 0.8);
+const viewHeight = Math.round(viewWidth * 0.6);
 
 const styles = StyleSheet.create({
   container: {
@@ -116,5 +121,14 @@ const styles = StyleSheet.create({
     color: '#000',
     padding: 10,
     margin: 40
-  }
+},
+rectangle: {
+    position: "absolute",
+    width: viewWidth,
+    height: viewHeight,
+    left: (width - viewWidth) / 2,
+    top: (height - viewHeight) / 2,
+    borderWidth: 2,
+    borderColor: "#f00",
+}
 });
