@@ -28,7 +28,6 @@ export default class App extends Component<{}> {
              console.log("PATH START");
              console.log(path);
              console.log("PATH END");
-             console.log("TESTING NEW!!!!");
              NativeModules.ReadImageData.readImage(path, (image) => {
                  console.log("THE IMAGE DATA IS: ");
                  console.log(image);
